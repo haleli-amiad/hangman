@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './assets/scss/global.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { WordProvider } from './context/WordContext'
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <WordProvider>
+      <App />
+    </WordProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

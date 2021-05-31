@@ -1,0 +1,16 @@
+@import "../../assets/scss/setup/mixins";
+@import "../../assets/scss/setup/variables";
+
+.keyboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 1rem;
+    @include for-wide-layout{
+        margin-top: 1rem;
+        max-width: 66vw;
+
+    }
+}

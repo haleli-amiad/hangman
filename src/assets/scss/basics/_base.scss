@@ -1,0 +1,70 @@
+* {
+	box-sizing: border-box;
+	::selection {
+		background-color: $clr1;
+		color: $clr3;
+	}
+}
+
+html {
+	font-size: 16px;
+	scroll-behavior: smooth;
+	background-color: $clr1;
+	margin: 0 auto;
+	color: rgb(244, 235, 235);
+	letter-spacing: 0.3px;
+}
+
+body {
+	margin: 0;
+	font-family: fredericka, sans-serif;
+	// overflow: hidden;
+	background-color: rgb(5, 65, 5);
+	min-height: 100vh;
+	border: 20px solid rgb(143, 88, 16);
+}
+
+img {
+	max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	font-weight: normal;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+button {
+	font-family: inherit;
+	cursor: pointer;
+
+	* {
+		pointer-events: none;
+	}
+}
+
+li {
+	list-style: none;
+}
+
+input {
+	font-family: inherit;
+	text-align: inherit;
+}
+a:hover {
+	text-decoration: none;
+}

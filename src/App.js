@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import HangmanFigure from './components/HangmanFigure/HangmanFigure';
+import Word from './components/Word/Word';
+import Keyboard from './components/Keyboard/Keyboard';
+import { WordContext } from './context/WordContext';
+import { useContext } from 'react';
+import Message from './components/Message/Message';
 
 function App() {
+  const { isWon, isLost, word } = useContext(WordContext)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App flex around wrap">
+      {(!isWon && !isLost && word) && <> <HangmanFigure />
+        <Word />
+        <Keyboard /></>}
+      {isWon && <Message title="You Won!" cta="Play Again" />}
+      {isLost && <Message title="Maybe next time :(" cta="Try Again" />}
     </div>
   );
 }

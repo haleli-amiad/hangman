@@ -1,0 +1,108 @@
+@import "../../assets/scss/setup/mixins";
+@import "../../assets/scss/setup/variables";
+
+@function rem($size) {
+  $remSize: $size / 16px;
+  @return ($remSize) * 1rem;
+}
+
+$main-color: #f4ededec;
+$mobile-width: rem(6px);
+$desktop-width: rem(10px);
+
+.hangman-container {
+  position: relative;
+  min-height: 25vh;
+  left: -10%;
+  margin: 1rem 0;
+  @include for-wide-layout {
+    left: 0;
+    height: 60vh;
+  }
+  .hangman {
+    position: absolute;
+    background-color: $main-color;
+    border-radius: 5px;
+    width: $mobile-width;
+    @include for-wide-layout {
+      width: $desktop-width;
+    }
+  }
+  .hangman-1 {
+    height: rem(160px);
+    @include for-wide-layout {
+      height: rem(550px);
+    }
+  }
+  .hangman-2 {
+    height: rem(50px);
+    transform: rotate(90deg) translate(rem(-22px), rem(-25px));
+    @include for-wide-layout {
+      height: rem(190px);
+      transform: rotate(90deg) translate(rem(-90px), rem(-90px));
+    }
+  }
+  .hangman-3 {
+    height: rem(25px);
+    transform: translateX(rem(50px));
+    @include for-wide-layout {
+      height: rem(80px);
+      transform: translateX(rem(180px));
+    }
+  }
+  .hangman-4 {
+    width: rem(40px);
+    border-radius: 50%;
+    height: rem(40px);
+    border: $mobile-width solid $main-color;
+    background-color: transparent;
+    transform: translate(rem(33px), rem(22px));
+    @include for-wide-layout {
+      border-width: $desktop-width;
+      width: rem(100px);
+      transform: translate(rem(140px), rem(70px));
+      height: rem(100px);
+    }
+  }
+  .hangman-5 {
+    height: rem(55px);
+    transform: translate(49px, 57px);
+    @include for-wide-layout {
+      height: rem(220px);
+      transform: translate(185px, 165px);
+    }
+  }
+  .hangman-6,
+  .hangman-7,
+  .hangman-8,
+  .hangman-9 {
+    height: rem(40px);
+    @include for-wide-layout {
+      height: rem(120px);
+    }
+  }
+  .hangman-6 {
+    transform: translate(rem(65px), rem(43px)) rotate(50deg);
+    @include for-wide-layout {
+      transform: translate(rem(230px), rem(110px)) rotate(50deg);
+    }
+  }
+  .hangman-7 {
+    transform: translate(rem(35px), rem(43px)) rotate(-50deg);
+    @include for-wide-layout {
+      transform: translate(rem(140px), rem(110px)) rotate(-50deg);
+    }
+  }
+  .hangman-8 {
+    transform: translate(rem(58px), rem(106px)) rotate(150deg);
+    @include for-wide-layout {
+      transform: translate(rem(215px), rem(370px)) rotate(150deg);
+    }
+  }
+  .hangman-9 {
+    transform: translate(rem(40px), rem(106px)) rotate(-150deg);
+    @include for-wide-layout {
+      transform: translate(rem(155px), rem(370px)) rotate(-150deg);
+    }
+  }
+}

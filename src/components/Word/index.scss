@@ -1,0 +1,14 @@
+@import "../../assets/scss/setup/mixins";
+@import "../../assets/scss/setup/variables";
+
+.word-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    @include for-wide-layout {
+        margin: 10rem 0rem 0 2rem;
+        justify-content: flex-end;
+        max-width: 60vw;
+    }
+}
